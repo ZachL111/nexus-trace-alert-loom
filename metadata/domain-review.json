@@ -1,0 +1,73 @@
+{
+  "repo": "nexus-trace-alert-loom",
+  "language": "Scala",
+  "category": "Observability",
+  "goal": "Package a Scala local lab for alert analysis with capacity fixtures, allocation and spill reports, and documented operating limits.",
+  "review_model": {
+    "terms": [
+      "span volume",
+      "latency skew",
+      "signal loss",
+      "incident shape"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "span volume",
+      "signal": 74,
+      "slack": 38,
+      "drag": 24,
+      "confidence": 80,
+      "score": 194,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "latency skew",
+      "signal": 78,
+      "slack": 27,
+      "drag": 28,
+      "confidence": 91,
+      "score": 190,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "signal loss",
+      "signal": 60,
+      "slack": 44,
+      "drag": 32,
+      "confidence": 94,
+      "score": 162,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "incident shape",
+      "signal": 86,
+      "slack": 43,
+      "drag": 31,
+      "confidence": 82,
+      "score": 204,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "span volume",
+      "signal": 72,
+      "slack": 47,
+      "drag": 24,
+      "confidence": 91,
+      "score": 210,
+      "lane": "ship"
+    }
+  ]
+}
