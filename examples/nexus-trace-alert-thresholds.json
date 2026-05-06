@@ -1,0 +1,17 @@
+{
+  "repo": "nexus-trace-alert-loom",
+  "thresholds": {
+    "signal": 4,
+    "slack": 1,
+    "confidence": 2,
+    "drag": 3,
+    "ship": 164,
+    "watch": 109
+  },
+  "terms": [
+    "span volume",
+    "latency skew",
+    "signal loss",
+    "incident shape"
+  ]
+}
